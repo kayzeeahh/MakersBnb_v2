@@ -1,15 +1,79 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>MakersBnB</title>
+<style>
+    form {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    input {
+      width: 100%;
+      height: 25px;
+      border: 1px solid gray;
+      padding: 5px;
+    }
+  
+    button {
+      width: 100%;
+      height: 35px;
+      background-color: blue;
+      color: white;
+      border: none;
+      margin-top: 20px;
+    }
 
-        <!--
-            Head to https://github.com/makersacademy/web-applications-in-python/blob/main/pills/loading_css_or_static_files.md
-            If you're wondering how the CSS file below is being loaded.
-        -->
-        <link rel="stylesheet" href="/static/style.css" >
-    </head>
-    <body>
-        <p>This is the homepage.</h1>
-    </body>
-</html>
+.logo {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.login {
+  width: 80px;
+  height: 30px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+  </style>
+
+<div class="logo">LondonBNB</div> <!-- You can change the logo text here -->
+<a href="http://localhost:5000/login">
+    <button class="login">Login</button> <!-- You can change the login button text here -->
+</a>
+<h1>Sign Up for LondonBNB</h1> <!-- You can change the sign up message here -->
+  <form>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+  
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+  
+    <button type="submit">Sign up</button>
+  </form>
+  
