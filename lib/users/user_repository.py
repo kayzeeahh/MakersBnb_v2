@@ -24,8 +24,34 @@ class User_Repository:
             [user.username, user.email, user.password],
         )
         
-    def login():
-        pass
+    def verify(self, username, password):
+        print(
+            self._connection.execute(
+                "SELECT * FROM users WHERE username=%s AND password=%s",
+                [username, password],
+            )
+        )
+        return self._connection.execute(
+            "SELECT * FROM users WHERE username=%s AND password=%s",
+            [username, password],
+        )
+        
+    def login(self, request):
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        userReturn = self.verify(username, password)
+
+        if len(userReturn) > 0:
+            userRow = userReturn[0]
+            user = User(
+                userRow["username"], userRow["email"], userRow["password"]
+            )
+            user.id = userRow["id"]
+            return user.id
+        else:
+            # user does not exist, return error
+            return "error"
     
-    def logout():
-        pass
+    def logout(user):
+        user.logout()
