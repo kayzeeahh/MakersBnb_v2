@@ -1,36 +1,22 @@
-# MakersBnB Python Project Seed
+# MakersBnB Python Project
 
-This repo contains the seed codebase for the MakersBnB project in Python (using 
-Flask and Pytest).
+In this project I am creating a web app that is similar to the popular app Airbnb. The minimal viable product includes features that allow:
 
-Someone in your team should fork this seed repo to their Github account. 
-Everyone in the team should then clone this fork to their local machine to work on it.
+Any signed-up user can list a new space.
 
-## Setup
+Users can list multiple spaces.
 
-```shell
-# Install dependencies and set up the virtual environment
-; pipenv install
+Users should be able to name their space, provide a short description of the space, and a price per night.
 
-# Activate the virtual environment
-; pipenv shell
+Users should be able to offer a range of dates where their space is available.
 
-# Install the virtual browser we will use for testing
-; playwright install
-# If you have problems with the above, contact your coach
+Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
 
-# Create a test and development database
-; createdb YOUR_PROJECT_NAME
-; createdb YOUR_PROJECT_NAME_TEST
+Nights for which a space has already been booked should not be available for users to book that space.
 
-# Open lib/database_connection.py and change the database names
-; open lib/database_connection.py
+Until a user has confirmed a booking request, that space can still be booked for that night.
 
-# Run the tests (with extra logging)
-; pytest -sv
+## Tech Stack
+Python, Http, Flask, Postgres, Pytest, CSS, Bootstrap
 
-# Run the app
-; python app.py
-
-# Now visit http://localhost:5000/index in your browser
 ```
