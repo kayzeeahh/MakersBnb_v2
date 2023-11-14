@@ -1,6 +1,8 @@
 import os
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, session, redirect
 from lib.database_connection import get_flask_database_connection
+from lib.users.user_repository import User_Repository
+from lib.rooms.room_repository import Room_Repository
 
 # Create a new Flask app
 app = Flask(__name__)
@@ -24,3 +26,5 @@ def get_login():
 # if started in test mode.
 if __name__ == '__main__':
     app.run(debug=True, port=int(os.environ.get('PORT', 5000)))
+
+
